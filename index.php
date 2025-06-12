@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['codlog'])){
+    header("Location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +14,6 @@
   <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <body>
-  <script>window.location.href = 'dist/pages/index.php'</script>
+<script>window.location.href = 'login.php'</script>
 </body>
 </html>
