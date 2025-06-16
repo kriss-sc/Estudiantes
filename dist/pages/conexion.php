@@ -2,7 +2,7 @@
 $hostname = "localhost";
 $user = "root";
 $password = "";
-$datebase = "Inscribcion_Estudiante";
+$datebase = "Estudiantes";
 
 $conn = new mysqli($hostname, $user, $password, $datebase);
 

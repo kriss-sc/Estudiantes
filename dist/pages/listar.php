@@ -288,7 +288,8 @@
             <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
-                <div class="col-sm-6"><h3 class="mb-0">Simple Tables</h3></div>
+          <div class="col-12">
+                    <h3 class="mb-0">Simple Tables</h3></div>
             </div>
             <!--end::Row-->
             </div>
@@ -301,61 +302,70 @@
             <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-12">
                 <!-- /.card -->
-                <div class="card mb-4" style="width: 1000px">
-                    <div class="card-header">
-                    <h3 class="card-title">Condensed Full Width Table</h3>
+                <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Responsive Hover Table</h3>
+
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                      </button>
                     </div>
-                    <!-- /.card-header -->
-                    <div class="card-body p-0">
-                    <table class="table table-sm">
-                        <thead>
-                        <tr>
-                            <th style="width: 100px">#</th>
-                            <th>Nombres</th>
-                            <th>Telefono</th>
-                            <th>Estado</th>
-                            <th style="width: 35%">Acciones</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <?php $conexion = mysqli_connect("localhost", "root", "", "Inscribcion_Estudiante");
-
-if (!$conexion) {
-    die("Error al conectar: " . mysqli_connect_error());
-}
-
-$consulta = "SELECT * FROM estudiante"; 
-$estudiante = mysqli_query($conexion, $consulta);
-
-if (!$estudiante) {
-    die("Error en la consulta: " . mysqli_error($conexion));
-}
-?>
-                        <?php while($row =mysqli_fetch_array($estudiante)): ?>
-                        <tr>
-                            <th><?php echo $row['id']; ?></th>
-                            <th><?php echo $row['nombre']; ?></th>
-                            <th><?php echo $row['noTelefono']; ?></th>
-                            <th><?php echo $row['estado']; ?></th>
-                            <th>
-                                <a href="view.php?id=<?php echo $row['id']; ?>"><button type="button" title="Ver datos completos" class="btn btn-outline-success"><i class="fa-regular fa-eye"></i></button></a>
-                                <a href="delate.php? id=<?php echo $row['id']; ?>"><button type="button" title="Borrar registro" class="btn btn-outline-danger"><i class="fa-solid  fa-trash-can"></i></button></a>
-                                <a href="edit.php? id=<?php echo $row['id']; ?>"><button type="button" title="editar registro" class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></button></a>
-                            </th>
-                        </tr>
-                    <?php endwhile?>
-                        </tbody>
-                    </table>
-                    <script>
-                $(document).ready( function () {
-                    $('#example').DataTable();
-                });
-            </script>
-                    </div>
-                    <!-- /.card-body -->
+                  </div>
                 </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>User</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                      <th>Reason</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>183</td>
+                      <td>John Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-success">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>219</td>
+                      <td>Alexander Pierce</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-warning">Pending</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>657</td>
+                      <td>Bob Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-primary">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>175</td>
+                      <td>Mike Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-danger">Denied</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
                 <script src="https://kit.fontawesome.com/46324eb03e.js" crossorigin="anonymous"></script>
                 </div>
                 <!-- /.col -->
